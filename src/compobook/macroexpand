@@ -1,0 +1,7 @@
+
+
+
+(make-route :get {:re #"/"}
+  (fn [ring-request]
+    (let-request [{{referer "referer"} :headers} ring-request]
+      (str "You came from " referer))))
